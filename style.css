@@ -1,247 +1,108 @@
-/* --- 1. Reset Box-Sizing & Nền trang --- */
-html {
-  box-sizing: border-box;
-}
-
+/* === Reset & Base Styles === */
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #f0f2f5; /* Màu nền nhẹ làm nổi bật thẻ sản phẩm */
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 20px;
+  line-height: 1.6;
+  background-color: #f0f2f5;
+  color: #333333;
 }
 
-/* --- 2. Định dạng Thẻ sản phẩm (.product-card) --- */
-.product-card {
-  width: 300px;
+/* === Layout & Containers === */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
   background-color: #ffffff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 50px auto; /* Tự động căn giữa trang */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thử thách: Đổ bóng nhẹ */
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* --- 3. Định dạng các phần tử con bên trong --- */
-.product-card img {
-  width: 100%; /* Chiếm toàn bộ bề rộng vùng nội dung */
-  height: 200px;
-  object-fit: cover;
-  border-radius: 4px;
+.page-centered {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.product-card h3 {
-  font-size: 1.25rem;
+/* === Typography & Common Elements === */
+h1,
+h2,
+h3 {
   color: #1a202c;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.product-card .price {
-  color: #e53e3e; /* Màu đỏ nổi bật cho giá */
-  font-weight: bold;
-  font-size: 1.15rem;
-  margin-top: 0;
-  margin-bottom: 20px;
+h1 {
+  font-size: 2rem;
 }
 
-/* Chuyển đổi thẻ inline <a> thành block để chiếm toàn bộ chiều rộng */
-.product-card .btn {
-  display: block;
+h2 {
+  font-size: 1.5rem;
+  margin-top: 24px;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 24px 0;
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-block;
   background-color: #3182ce;
   color: #ffffff;
   text-decoration: none;
-  padding: 12px 0;
-  text-align: center;
-  border-radius: 6px;
-  font-weight: 500;
-}
-
-/* Hiệu ứng rê chuột cho nút bấm */
-.product-card .btn:hover {
-  background-color: #2b6cb0;
-}
-/* --- Reset Box-Sizing & Căn giữa màn hình --- */
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  display: grid;
-  place-items: center; /* Căn giữa nút bấm chính giữa viewport */
-  height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0;
-}
-
-/* --- Định dạng trạng thái tĩnh của nút (.btn) --- */
-.btn {
-  display: inline-block; /* Nhận padding, margin nhưng không ngắt dòng toàn bộ chiều rộng */
-  background-color: #3498db;
-  color: #ffffff;
-  padding: 15px 30px;
-  text-decoration: none; /* Khử gạch chân mặc định của thẻ <a> */
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+  padding: 12px 24px;
+  font-size: 16px;
   font-weight: bold;
-  border-radius: 8px;
-
-  /* Thiết lập chuyển động mượt mà cho màu nền và hiệu ứng nhấc nút (transform) */
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
   transition:
     background-color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.2s ease;
 }
 
-/* --- Trạng thái tương tác khi rê chuột (:hover) --- */
 .btn:hover {
-  background-color: #2980b9; /* Đổi sang tông xanh dương đậm */
-  transform: translateY(
-    -3px
-  ); /* Thử thách cộng thêm: Nhích nhẹ nút lên trên 3px */
-}
-/* --- Reset Box-Sizing & Thiết lập body cơ bản --- */
-html {
-  box-sizing: border-box;
+  background-color: #2b6cb0;
+  transform: translateY(-2px);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-/* --- Định dạng Bảng cơ bản --- */
-table {
-  width: 80%; /* Chiếm 80% bề rộng trang */
-  margin: 40px auto; /* Tự động căn giữa */
-  border-collapse: collapse; /* Gộp các đường viền đôi lại thành đường đơn */
-}
-
-/* Định dạng các ô tiêu đề và ô dữ liệu */
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
-}
-
-/* Làm nổi bật hàng Tiêu đề */
-thead th {
-  background-color: #007bff; /* Màu xanh dương */
-  color: white;
-}
-
-/* --- Tạo hiệu ứng "Ngựa vằn" (Zebra Striping) cho các hàng chẵn --- */
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2; /* Màu xám rất nhạt xen kẽ */
-}
-
-/* --- Thử thách thêm: Hiệu ứng hover khi rê chuột vào hàng --- */
-tbody tr:hover {
-  background-color: #e2e2e2; /* Tô màu xám đậm hơn một chút để nổi bật */
-}
-/* --- Reset Box-Sizing & Cuộn trang mượt mà --- */
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth; /* Tạo hiệu ứng cuộn trang lướt êm khi nhấp liên kết neo */
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: sans-serif;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-/* --- Định dạng nút Cuộn lên đầu trang (.back-to-top-btn) --- */
-.back-to-top-btn {
-  position: fixed; /* Ghim nút vào một vị trí cố định trên màn hình (viewport) */
-  bottom: 30px; /* Cách cạnh dưới màn hình 30px */
-  right: 30px; /* Cách cạnh phải màn hình 30px */
-  z-index: 100; /* Luôn hiển thị nổi trên các nội dung khác */
-
-  /* Các thuộc tính trang trí */
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  border-radius: 50%; /* Bo tròn thành hình tròn */
-
-  /* Căn giữa icon mũi tên */
-  display: grid;
-  place-items: center;
-
-  transition: background-color 0.3s;
-}
-
-/* Đổi màu khi di chuột qua */
-.back-to-top-btn:hover {
-  background-color: #0056b3;
-}
-/* --- Reset Box-Sizing & Thiết lập cơ bản --- */
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8fafc;
-}
-
-/* --- 1. Định dạng Menu chính (.main-nav) --- */
+/* === Navigation & Dropdown === */
 .main-nav {
-  background-color: #2c3e50; /* Màu nền thanh điều hướng */
+  background-color: #2c3e50;
 }
 
 .main-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  list-style: none;
 }
 
-/* Sắp xếp các mục menu cấp 1 nằm ngang */
 .main-nav > ul > li {
   display: inline-block;
 }
 
-/* Định dạng thẻ liên kết <a> của menu cấp 1 */
 .main-nav > ul > li > a {
   display: block;
   color: #ffffff;
@@ -254,37 +115,31 @@ body {
   background-color: #34495e;
 }
 
-/* --- 2. Logic Khối tham chiếu & Ẩn/Hiện Menu con --- */
-
-/* Thiết lập khối tham chiếu tọa độ cho menu con */
 .main-nav li.has-dropdown {
   position: relative;
 }
 
-/* Định vị menu con (.dropdown) */
 .main-nav .dropdown {
-  display: none; /* Mặc định ẩn hoàn toàn khi tải trang */
-  position: absolute; /* Nhấc khỏi luồng thông thường để định vị */
-  top: 100%; /* Xuất hiện ngay mép dưới của mục cha */
+  display: none;
+  position: absolute;
+  top: 100%;
   left: 0;
-  background-color: #34495e; /* Nền menu con */
+  background-color: #34495e;
   min-width: 180px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 10; /* Thử thách: Luôn nổi trên các nội dung bên dưới */
+  z-index: 10;
 }
 
-/* Kích hoạt hiển thị khi rê chuột qua mục cha */
 .main-nav li.has-dropdown:hover .dropdown {
   display: block;
 }
 
-/* --- 3. Định dạng các mục bên trong Menu con --- */
 .main-nav .dropdown li {
-  display: block; /* Xếp các mục con theo chiều dọc */
+  display: block;
 }
 
 .main-nav .dropdown li a {
-  display: block; /* Vùng nhấp bao trọn toàn bộ bề ngang hàng */
+  display: block;
   color: #ecf0f1;
   text-decoration: none;
   padding: 12px 18px;
@@ -292,30 +147,46 @@ body {
 }
 
 .main-nav .dropdown li a:hover {
-  background-color: #1abc9c; /* Màu nhấn khi hover vào từng mục con */
+  background-color: #1abc9c;
   color: #ffffff;
 }
-/* --- Reset lề và kích thước cơ bản --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* === Product Card === */
+.product-card {
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 50px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-body {
-  font-family: Arial, sans-serif;
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-/* --- Khung chứa Container căn giữa hoàn hảo --- */
-.container {
-  min-height: 100vh; /* Chiếm tối thiểu 100% chiều cao màn hình */
-  display: flex; /* Dòng 1: Kích hoạt mô hình Flexbox */
-  justify-content: center; /* Dòng 2: Căn giữa theo trục chính (trục ngang) */
-  align-items: center; /* Dòng 3: Căn giữa theo trục phụ (trục dọc) */
-  background-color: #f0f2f5; /* Màu nền xám nhạt */
+.product-card h3 {
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
-/* --- Thẻ thông báo (.center-card) --- */
+.product-card .price {
+  color: #e53e3e;
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+
+.product-card .btn {
+  display: block;
+  width: 100%;
+}
+
+/* === Flex Centered Card === */
 .center-card {
   padding: 30px;
   background: #ffffff;
@@ -326,9 +197,126 @@ body {
 
 .center-card h3 {
   margin-bottom: 10px;
-  color: #333333;
 }
 
 .center-card p {
   color: #666666;
+  margin-bottom: 0;
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+tbody tr:hover {
+  background-color: #edf2f7;
+}
+
+/* === Forms === */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.rating-group label {
+  display: inline-block;
+  margin-right: 12px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* === Back To Top Button === */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.back-to-top-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* === Box Model & Display Test Utilities === */
+.box {
+  padding: 20px;
+  margin: 15px 0;
+  border: 2px solid #4a5568;
+  border-radius: 4px;
+}
+
+.box-1 {
+  background-color: #e2e8f0;
+}
+
+.box-2 {
+  background-color: #fed7d7;
+}
+
+.block-box {
+  display: block;
+  background-color: #bee3f8;
+}
+
+.inline-box {
+  display: inline;
+  background-color: #feebc8;
+  padding: 4px 8px;
 }

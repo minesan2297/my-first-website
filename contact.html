@@ -4,37 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liên hệ với chúng tôi</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Liên hệ với chúng tôi</h1>
-    <p>Chúng tôi rất mong nhận được phản hồi từ bạn!</p>
+    <div class="container">
+      <h1>Liên hệ với chúng tôi</h1>
+      <p>Chúng tôi rất mong nhận được phản hồi từ bạn!</p>
 
-    <form action="#" method="post">
-      <!-- Ô nhập Họ và Tên -->
-      <div>
-        <label for="ho_ten">Họ và tên:</label><br />
-        <input type="text" id="ho_ten" name="ho_ten" />
-      </div>
-      <br />
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="ho_ten">Họ và tên:</label>
+          <input type="text" id="ho_ten" name="ho_ten" />
+        </div>
 
-      <!-- Ô nhập Email -->
-      <div>
-        <label for="email">Email của bạn:</label><br />
-        <input type="email" id="email" name="email_nguoi_dung" />
-      </div>
-      <br />
+        <div class="form-group">
+          <label for="email">Email của bạn:</label>
+          <input type="email" id="email" name="email_nguoi_dung" />
+        </div>
 
-      <!-- Ô nhập Lời nhắn -->
-      <div>
-        <label for="loi_nhan">Lời nhắn:</label><br />
-        <textarea id="loi_nhan" name="loi_nhan" rows="5"></textarea>
-      </div>
-      <br />
+        <div class="form-group">
+          <label for="loi_nhan">Lời nhắn:</label>
+          <textarea id="loi_nhan" name="loi_nhan" rows="5"></textarea>
+        </div>
 
-      <!-- Nút Gửi form -->
-      <div>
-        <button type="submit">Gửi lời nhắn</button>
-      </div>
-    </form>
+        <button type="submit" class="btn">Gửi lời nhắn</button>
+      </form>
+    </div>
   </body>
 </html>
