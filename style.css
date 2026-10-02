@@ -320,3 +320,38 @@ tbody tr:hover {
   background-color: #feebc8;
   padding: 4px 8px;
 }
+/* === Product Grid (Flexbox) === */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-grid .product-card {
+  flex: 1 1 calc(25% - 20px);
+  min-width: 220px;
+  width: auto;
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-grid .product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h4 {
+  margin-bottom: 8px;
+  color: #2d3748;
+}
+
