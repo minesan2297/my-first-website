@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dự Án - Đinh Bách Hợp | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header nhất quán cho toàn bộ website -->
+    <header class="site-header">
+      <div class="site-header-content">
+        <a href="index.html" class="site-logo">
+          Bách Hợp<span>.dev</span>
+        </a>
+
+        <!-- Checkbox Hack cho Hamburger Menu trên Mobile -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" />
+        <label for="menu-toggle" class="hamburger-btn" aria-label="Mở menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+
+        <!-- Menu điều hướng chính -->
+        <nav class="site-nav" aria-label="Main Navigation">
+          <ul>
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="about.html">Giới Thiệu</a></li>
+            <li><a href="projects.html" class="active">Dự Án</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="portfolio-container">
+      <header class="page-header-section">
+        <h1>Các Dự Án Đã Thực Hiện</h1>
+        <p>
+          Dưới đây là các dự án và thành phần giao diện web tiêu biểu tôi đã tự tay
+          thiết kế và lập trình trong quá trình học tập và rèn luyện.
+        </p>
+      </header>
+
+      <!-- Lưới Thẻ Dự Án (1 cột Mobile, 2 cột Tablet, 3 cột Desktop) -->
+      <section class="project-grid">
+        <!-- Dự án 1: Thư viện ảnh Gallery -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img
+              src="https://picsum.photos/600/400?random=11"
+              alt="Giao diện Thư viện ảnh Flexbox Gallery"
+              class="project-thumb"
+            />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Thư Viện Ảnh Flexbox Gallery</h3>
+            <p class="project-desc">
+              Giao diện trưng bày bộ sưu tập hình ảnh đáp ứng hoàn toàn bằng Flexbox,
+              kết hợp hiệu ứng zoom tương tác mượt mà khi rê chuột và đổ bóng chân thực.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">Flexbox</span>
+              <span class="project-tag">Hover Effects</span>
+            </div>
+            <div class="project-actions">
+              <a href="gallery.html" class="btn btn-primary" target="_blank">Xem Demo</a>
+              <a href="https://github.com/minesan2297/my-first-website/blob/main/gallery.html" class="btn btn-outline" target="_blank" rel="noopener">Mã Nguồn</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dự án 2: Trang Báo chí Newspaper -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img
+              src="https://picsum.photos/600/400?random=12"
+              alt="Giao diện Trang Báo chí Newspaper Grid"
+              class="project-thumb"
+            />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Trang Báo Chí &amp; Tạp Chí</h3>
+            <p class="project-desc">
+              Bố cục tin tức đa cột chuyên nghiệp được xây dựng bằng CSS Grid đa tầng,
+              tổ chức tin tiêu điểm, bài viết phụ và thanh sidebar rõ ràng, khoa học.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">CSS Grid</span>
+              <span class="project-tag">Semantic HTML</span>
+              <span class="project-tag">Editorial</span>
+            </div>
+            <div class="project-actions">
+              <a href="newspaper.html" class="btn btn-primary" target="_blank">Xem Demo</a>
+              <a href="https://github.com/minesan2297/my-first-website/blob/main/newspaper.html" class="btn btn-outline" target="_blank" rel="noopener">Mã Nguồn</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dự án 3: Thẻ Sản phẩm E-Commerce -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img
+              src="https://picsum.photos/600/400?random=13"
+              alt="Giao diện Thẻ Sản phẩm Product Grid"
+              class="project-thumb"
+            />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Lưới Sản Phẩm E-Commerce</h3>
+            <p class="project-desc">
+              Hệ thống thẻ sản phẩm thương mại điện tử linh hoạt, tích hợp giá bán,
+              nút thêm vào giỏ hàng và bố cục tự động co giãn theo kích thước khung nhìn.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Box Model</span>
+              <span class="project-tag">Flexbox Grid</span>
+              <span class="project-tag">E-Commerce</span>
+            </div>
+            <div class="project-actions">
+              <a href="product-grid.html" class="btn btn-primary" target="_blank">Xem Demo</a>
+              <a href="https://github.com/minesan2297/my-first-website/blob/main/product-grid.html" class="btn btn-outline" target="_blank" rel="noopener">Mã Nguồn</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dự án 4: Menu Hamburger Đa nền tảng -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img
+              src="https://picsum.photos/600/400?random=14"
+              alt="Giao diện Menu Hamburger Responsive"
+              class="project-thumb"
+            />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Thanh Điều Hướng Responsive</h3>
+            <p class="project-desc">
+              Thanh điều hướng tự thích ứng cho mọi kích thước màn hình sử dụng kỹ thuật
+              thuần CSS Checkbox Hack để đóng/mở menu trên điện thoại mà không cần JS.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Mobile-First</span>
+              <span class="project-tag">Checkbox Hack</span>
+              <span class="project-tag">Animation</span>
+            </div>
+            <div class="project-actions">
+              <a href="responsive-nav.html" class="btn btn-primary" target="_blank">Xem Demo</a>
+              <a href="https://github.com/minesan2297/my-first-website/blob/main/responsive-nav.html" class="btn btn-outline" target="_blank" rel="noopener">Mã Nguồn</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dự án 5: Trang Công Thức Nấu Ăn Chuẩn SEO -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img
+              src="https://picsum.photos/600/400?random=15"
+              alt="Giao diện Trang Công Thức Nấu Ăn Recipe"
+              class="project-thumb"
+            />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Trang Công Thức Chuẩn Ngữ Nghĩa</h3>
+            <p class="project-desc">
+              Ứng dụng các thẻ ngữ nghĩa HTML5 hiện đại (article, section, header, footer)
+              cùng bảng dữ liệu nguyên liệu và form phản hồi người dùng hoàn chỉnh.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML5 Article</span>
+              <span class="project-tag">Data Tables</span>
+              <span class="project-tag">Interactive Form</span>
+            </div>
+            <div class="project-actions">
+              <a href="recipe.html" class="btn btn-primary" target="_blank">Xem Demo</a>
+              <a href="https://github.com/minesan2297/my-first-website/blob/main/recipe.html" class="btn btn-outline" target="_blank" rel="noopener">Mã Nguồn</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dự án 6: Bảng Thời Khóa Biểu Tuần -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img
+              src="https://picsum.photos/600/400?random=16"
+              alt="Giao diện Thời Khóa Biểu Timetable"
+              class="project-thumb"
+            />
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Bảng Thời Khóa Biểu Tuần</h3>
+            <p class="project-desc">
+              Thiết kế bảng lịch trình trực quan với kỹ thuật Zebra Striping (hàng chẵn lẻ
+              so le), viền bảng tinh gọn (border-collapse) và hiệu ứng hover làm nổi bật dòng.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML Tables</span>
+              <span class="project-tag">Zebra Striping</span>
+              <span class="project-tag">Pseudo-classes</span>
+            </div>
+            <div class="project-actions">
+              <a href="timetable.html" class="btn btn-primary" target="_blank">Xem Demo</a>
+              <a href="https://github.com/minesan2297/my-first-website/blob/main/timetable.html" class="btn btn-outline" target="_blank" rel="noopener">Mã Nguồn</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer nhất quán -->
+    <footer class="site-footer">
+      <div class="site-footer-content">
+        <div class="site-footer-brand">
+          Đinh Bách Hợp<span>.Portfolio</span>
+        </div>
+        <div class="site-footer-links">
+          <a href="https://github.com/minesan2297" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://facebook.com/dinhhopdh19" target="_blank" rel="noopener">Facebook</a>
+          <a href="contact.html">Liên Hệ</a>
+        </div>
+        <p class="site-footer-copy">
+          &copy; 2026 Đinh Bách Hợp. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

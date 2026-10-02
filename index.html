@@ -3,56 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giới thiệu về tôi</title>
+    <title>Đinh Bách Hợp - Web Developer Portfolio | Trang Chủ</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>Đinh Bách Hợp</h1>
-        <img src="images/avatar.png" alt="Ảnh chân dung đại diện" width="180" />
-      </header>
+    <!-- Header nhất quán cho toàn bộ website -->
+    <header class="site-header">
+      <div class="site-header-content">
+        <a href="index.html" class="site-logo">
+          Bách Hợp<span>.dev</span>
+        </a>
 
-      <main>
-        <section>
-          <h2>Giới thiệu bản thân</h2>
-          <p>
-            Xin chào! Tôi hiện là sinh viên chuyên ngành
-            <strong>Công nghệ thông tin</strong>, định hướng phát triển trở
-            thành kỹ sư <em>Fullstack Web Developer</em>.
-          </p>
-        </section>
+        <!-- Checkbox Hack cho Hamburger Menu trên Mobile -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" />
+        <label for="menu-toggle" class="hamburger-btn" aria-label="Mở menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
 
-        <section>
-          <h2>Sở thích và Đam mê</h2>
-          <p>
-            Tôi dành thời gian nghiên cứu các giải pháp tối ưu hóa hiệu năng
-            website, xây dựng hệ thống và khám phá các công nghệ frontend hiện
-            đại.
-          </p>
-        </section>
-
-        <section>
-          <h2>Kết nối với tôi</h2>
+        <!-- Menu điều hướng chính -->
+        <nav class="site-nav" aria-label="Main Navigation">
           <ul>
-            <li>
-              <a href="https://github.com/minesan2297" target="_blank"
-                >Github</a
-              >
-            </li>
-            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-            <li>
-              <a href="https://facebook.com/dinhhopdh19" target="_blank"
-                >Facebook</a
-              >
-            </li>
+            <li><a href="index.html" class="active">Trang Chủ</a></li>
+            <li><a href="about.html">Giới Thiệu</a></li>
+            <li><a href="projects.html">Dự Án</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
           </ul>
-        </section>
-      </main>
+        </nav>
+      </div>
+    </header>
 
-      <footer>
-        <p>&copy; 2026 Đinh Bách Hợp. All rights reserved.</p>
-      </footer>
-    </div>
+    <main>
+      <!-- Khu vực Hero nổi bật -->
+      <section class="hero">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <span class="hero-tag">👋 Xin chào &amp; Chào mừng bạn</span>
+            <h1 class="hero-title">
+              Tôi là <span>Đinh Bách Hợp</span><br />
+              Frontend &amp; Fullstack Developer
+            </h1>
+            <p class="hero-desc">
+              Sinh viên chuyên ngành Công nghệ Thông tin với niềm đam mê sâu sắc
+              trong việc xây dựng các giao diện web chuẩn ngữ nghĩa HTML5, hiện đại
+              với CSS Grid/Flexbox và tương thích hoàn hảo trên mọi thiết bị di động.
+            </p>
+            <div class="btn-group">
+              <a href="projects.html" class="btn btn-primary">
+                Xem Dự Án Của Tôi &rarr;
+              </a>
+              <a href="contact.html" class="btn btn-outline">
+                Liên Hệ Hợp Tác
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image-box">
+            <img
+              src="images/avatar.png"
+              alt="Ảnh chân dung đại diện của Đinh Bách Hợp"
+              class="hero-avatar"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Điểm nổi bật & Năng lực kỹ thuật -->
+      <section class="portfolio-container">
+        <div class="hero-highlights">
+          <article class="highlight-card">
+            <div class="highlight-icon">📱</div>
+            <h3>Mobile-First Design</h3>
+            <p>
+              Thiết kế giao diện tối ưu hóa từ màn hình điện thoại nhỏ nhất đến
+              màn hình máy tính để bàn kích thước lớn.
+            </p>
+          </article>
+
+          <article class="highlight-card">
+            <div class="highlight-icon">🎨</div>
+            <h3>CSS Grid &amp; Flexbox</h3>
+            <p>
+              Tổ chức layout hiện đại, linh hoạt, đảm bảo không có thanh cuộn ngang
+              và hiệu ứng chuyển động mượt mà.
+            </p>
+          </article>
+
+          <article class="highlight-card">
+            <div class="highlight-icon">⚡</div>
+            <h3>HTML5 Chuẩn Ngữ Nghĩa</h3>
+            <p>
+              Cấu trúc mã nguồn theo chuẩn W3C, nâng cao khả năng tiếp cận (a11y)
+              và tối ưu hóa công cụ tìm kiếm (SEO).
+            </p>
+          </article>
+
+          <article class="highlight-card">
+            <div class="highlight-icon">🚀</div>
+            <h3>Sẵn Sàng Làm Việc</h3>
+            <p>
+              Kỹ năng thực hành vững vàng, quản lý phiên bản với Git/GitHub và
+              tinh thần chủ động tiếp thu công nghệ mới.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer nhất quán -->
+    <footer class="site-footer">
+      <div class="site-footer-content">
+        <div class="site-footer-brand">
+          Đinh Bách Hợp<span>.Portfolio</span>
+        </div>
+        <div class="site-footer-links">
+          <a href="https://github.com/minesan2297" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://facebook.com/dinhhopdh19" target="_blank" rel="noopener">Facebook</a>
+          <a href="contact.html">Liên Hệ</a>
+        </div>
+        <p class="site-footer-copy">
+          &copy; 2026 Đinh Bách Hợp. All rights reserved.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

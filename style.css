@@ -1,4 +1,32 @@
-/* === Reset & Base Styles === */
+/* ========================================================
+   DỰ ÁN TỐT NGHIỆP: WEBSITE PORTFOLIO CÁ NHÂN HOÀN CHỈNH
+   Tác giả: Đinh Bách Hợp
+   Triết lý: Mobile-First, External CSS3, Flexbox & CSS Grid
+   ======================================================== */
+
+/* === 1. DESIGN SYSTEM & CSS VARIABLES === */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --secondary: #0f172a;
+  --accent: #06b6d4;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+/* === 2. RESET & BASE STYLES === */
 *,
 *::before,
 *::after {
@@ -9,272 +37,855 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 100%;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f0f2f5;
-  color: #333333;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
-/* === Layout & Containers === */
+main {
+  flex: 1 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+/* === 3. TYPOGRAPHY & COMMON LAYOUT === */
+h1, h2, h3, h4 {
+  color: var(--text-main);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.625rem;
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+.portfolio-container {
+  width: 100%;
+  max-width: 75rem; /* 1200px */
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.page-header-section {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.page-header-section h1 {
+  font-size: 2.25rem;
+  color: var(--secondary);
+}
+
+.page-header-section p {
+  font-size: 1.125rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/* === 4. BUTTONS & CALL-TO-ACTION === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* === 5. HEADER & RESPONSIVE NAVIGATION (MOBILE-FIRST) === */
+.site-header {
+  background-color: var(--secondary);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+}
+
+.site-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+}
+
+.site-logo span {
+  color: var(--accent);
+}
+
+/* Kỹ thuật Checkbox Hack cho Hamburger Menu trên Mobile */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 1.875rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.hamburger-btn .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+/* Mobile Nav Menu: Mặc định xếp chồng & trượt xuống */
+.site-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1e293b;
+  box-shadow: var(--shadow-lg);
+  display: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-nav ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.site-nav li a {
+  display: block;
+  padding: 0.875rem 1.5rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: var(--transition);
+}
+
+.site-nav li a:hover,
+.site-nav li a.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left-color: var(--accent);
+  padding-left: 1.75rem;
+}
+
+/* Khi checkbox được check -> hiển thị menu */
+.menu-toggle:checked ~ .site-nav {
+  display: block;
+}
+
+/* Hiệu ứng biến đổi dấu X cho Hamburger */
+.menu-toggle:checked ~ .hamburger-btn .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle:checked ~ .hamburger-btn .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle:checked ~ .hamburger-btn .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* === 6. HERO SECTION (TRANG CHỦ) === */
+.hero {
+  padding: 3rem 1rem 4rem;
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  color: var(--secondary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-title span {
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 36rem;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+.hero-image-box {
+  position: relative;
+  width: 14rem;
+  height: 14rem;
+}
+
+.hero-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Feature Cards */
+.hero-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.highlight-card {
+  background: var(--bg-card);
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* === 7. ABOUT PAGE (TRANG GIỚI THIỆU) === */
+.about-section {
+  padding: 2rem 0;
+}
+
+.about-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+
+.about-bio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-avatar-container {
+  text-align: center;
+}
+
+.about-avatar {
+  width: 13rem;
+  height: 13rem;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin: 0 auto;
+  box-shadow: var(--shadow-md);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.skill-item {
+  background-color: var(--bg-main);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.skill-item:hover {
+  background-color: var(--primary-light);
+  transform: translateX(4px);
+}
+
+.skill-badge {
+  font-size: 0.8125rem;
+  color: var(--primary);
+  background-color: #ffffff;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+}
+
+/* === 8. PROJECTS PAGE (TRANG DỰ ÁN - 1 COL MOBILE, 2 COL TABLET, 3 COL DESKTOP) === */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile mặc định 1 cột */
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
+}
+
+.project-thumb-box {
+  width: 100%;
+  height: 14rem;
+  overflow: hidden;
+  position: relative;
+  background-color: #e2e8f0;
+}
+
+.project-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-thumb {
+  transform: scale(1.06);
+}
+
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.625rem;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+.project-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.project-actions .btn {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* === 9. CONTACT PAGE (TRANG LIÊN HỆ) === */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-info-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-method-icon {
+  font-size: 1.5rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-method-text h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.contact-method-text p,
+.contact-method-text a {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.contact-method-text a:hover {
+  color: var(--primary);
+}
+
+.contact-form-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.required-star {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+/* Social Media Buttons */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-main);
+  color: var(--secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.social-link:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* === 10. FOOTER (NHẤT QUÁN CẢ 4 TRANG) === */
+.site-footer {
+  background-color: var(--secondary);
+  color: #94a3b8;
+  padding: 2.5rem 1rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.site-footer-content {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.site-footer-brand {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.site-footer-brand span {
+  color: var(--accent);
+}
+
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.site-footer-links a {
+  color: #cbd5e1;
+  font-size: 0.9375rem;
+}
+
+.site-footer-links a:hover {
+  color: var(--accent);
+}
+
+.site-footer-copy {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+/* ========================================================
+   11. RESPONSIVE DESIGN - MEDIA QUERIES (MOBILE-FIRST)
+   ======================================================== */
+
+/* --- TABLET BREAKPOINT: min-width: 768px --- */
+@media (min-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.875rem; }
+
+  .hamburger-btn {
+    display: none; /* Ẩn hamburger trên tablet trở lên */
+  }
+
+  .site-nav {
+    position: static;
+    display: block;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+    border-top: none;
+  }
+
+  .site-nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .site-nav li a {
+    padding: 0.5rem 1rem;
+    border-left: none;
+    border-radius: var(--radius-md);
+  }
+
+  .site-nav li a:hover,
+  .site-nav li a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding-left: 1rem;
+  }
+
+  .btn-group {
+    flex-direction: row;
+  }
+
+  .hero-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-bio-grid {
+    grid-template-columns: 14rem 1fr;
+    text-align: left;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Yêu cầu đề bài: Trang Dự án 2 cột trên Tablet */
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr 1.3fr;
+  }
+
+  .site-footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* --- DESKTOP BREAKPOINT: min-width: 1024px --- */
+@media (min-width: 1024px) {
+  .hero-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 2rem 0;
+  }
+
+  .hero-content {
+    text-align: left;
+    flex: 1;
+  }
+
+  .hero-desc {
+    margin-left: 0;
+  }
+
+  .hero-image-box {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .hero-highlights {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Yêu cầu đề bài: Trang Dự án 3 cột trên Desktop */
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ========================================================
+   12. TƯƠNG THÍCH CÁC BÀI TẬP TRƯỚC (STANDALONE EXERCISES)
+   Giữ nguyên định dạng để các trang bài tập không bị hỏng
+   ======================================================== */
 .container {
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
   background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
 }
 
-.page-centered {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  padding: 20px;
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 16px;
 }
 
-/* === Typography & Common Elements === */
-h1,
-h2,
-h3 {
-  color: #1a202c;
-  margin-bottom: 12px;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-top: 24px;
-}
-
-h3 {
-  font-size: 1.25rem;
-}
-
-p {
-  margin-bottom: 16px;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background-color: #e2e8f0;
-  margin: 24px 0;
-}
-
-/* === Buttons === */
-.btn {
-  display: inline-block;
-  background-color: #3182ce;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #2b6cb0;
-  transform: translateY(-2px);
-}
-
-/* === Navigation & Dropdown === */
-.main-nav {
-  background-color: #2c3e50;
-}
-
-.main-nav ul {
-  list-style: none;
-}
-
-.main-nav > ul > li {
-  display: inline-block;
-}
-
-.main-nav > ul > li > a {
-  display: block;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 15px 20px;
-  font-weight: 500;
-}
-
-.main-nav > ul > li > a:hover {
-  background-color: #34495e;
-}
-
-.main-nav li.has-dropdown {
-  position: relative;
-}
-
-.main-nav .dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #34495e;
-  min-width: 180px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 10;
-}
-
-.main-nav li.has-dropdown:hover .dropdown {
-  display: block;
-}
-
-.main-nav .dropdown li {
-  display: block;
-}
-
-.main-nav .dropdown li a {
-  display: block;
-  color: #ecf0f1;
-  text-decoration: none;
-  padding: 12px 18px;
-  font-size: 14px;
-}
-
-.main-nav .dropdown li a:hover {
-  background-color: #1abc9c;
-  color: #ffffff;
-}
-
-/* === Product Card === */
-.product-card {
-  width: 300px;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 50px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.gallery-item {
+  flex: 1 1 300px;
+  height: 240px;
+  overflow: hidden;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: var(--transition);
 }
 
-.product-card img {
+.gallery-item img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 4px;
 }
 
-.product-card h3 {
-  margin-top: 15px;
-  margin-bottom: 10px;
+.gallery-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.product-card .price {
-  color: #e53e3e;
-  font-weight: bold;
-  font-size: 1.15rem;
-  margin-bottom: 20px;
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
-.product-card .btn {
-  display: block;
-  width: 100%;
-}
-
-/* === Flex Centered Card === */
-.center-card {
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.center-card h3 {
-  margin-bottom: 10px;
-}
-
-.center-card p {
-  color: #666666;
-  margin-bottom: 0;
-}
-
-/* === Tables === */
-table {
-  width: 100%;
-  margin: 20px 0;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
-}
-
-thead th {
-  background-color: #007bff;
-  color: #ffffff;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f8fafc;
-}
-
-tbody tr:hover {
-  background-color: #edf2f7;
-}
-
-/* === Forms === */
-.form-group {
-  margin-bottom: 16px;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #cbd5e0;
-  border-radius: 6px;
-  font-size: 14px;
-  font-family: inherit;
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #3182ce;
-  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
-}
-
-.rating-group label {
-  display: inline-block;
-  margin-right: 12px;
-  font-weight: normal;
-  cursor: pointer;
-}
-
-/* === Back To Top Button === */
 .back-to-top-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
   z-index: 100;
-  background-color: #007bff;
+  background-color: var(--primary);
   color: #ffffff;
   text-decoration: none;
   width: 50px;
@@ -283,75 +894,11 @@ tbody tr:hover {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
 }
 
 .back-to-top-btn:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-hover);
   transform: translateY(-2px);
 }
-
-/* === Box Model & Display Test Utilities === */
-.box {
-  padding: 20px;
-  margin: 15px 0;
-  border: 2px solid #4a5568;
-  border-radius: 4px;
-}
-
-.box-1 {
-  background-color: #e2e8f0;
-}
-
-.box-2 {
-  background-color: #fed7d7;
-}
-
-.block-box {
-  display: block;
-  background-color: #bee3f8;
-}
-
-.inline-box {
-  display: inline;
-  background-color: #feebc8;
-  padding: 4px 8px;
-}
-/* === Product Grid (Flexbox) === */
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.product-grid .product-card {
-  flex: 1 1 calc(25% - 20px);
-  min-width: 220px;
-  width: auto;
-  margin: 0;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.product-grid .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.product-card h4 {
-  margin-bottom: 8px;
-  color: #2d3748;
-}
-

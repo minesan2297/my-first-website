@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới Thiệu - Đinh Bách Hợp | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header nhất quán cho toàn bộ website -->
+    <header class="site-header">
+      <div class="site-header-content">
+        <a href="index.html" class="site-logo">
+          Bách Hợp<span>.dev</span>
+        </a>
+
+        <!-- Checkbox Hack cho Hamburger Menu trên Mobile -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" />
+        <label for="menu-toggle" class="hamburger-btn" aria-label="Mở menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+
+        <!-- Menu điều hướng chính -->
+        <nav class="site-nav" aria-label="Main Navigation">
+          <ul>
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="about.html" class="active">Giới Thiệu</a></li>
+            <li><a href="projects.html">Dự Án</a></li>
+            <li><a href="contact.html">Liên Hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="portfolio-container">
+      <header class="page-header-section">
+        <h1>Giới Thiệu Về Tôi</h1>
+        <p>
+          Khám phá hành trình học tập, niềm đam mê phát triển web và bộ kỹ năng
+          chuyên môn tôi đã tích lũy.
+        </p>
+      </header>
+
+      <!-- Section 1: Về tôi (Tiểu sử, Học vấn, Kinh nghiệm) -->
+      <section class="about-section">
+        <div class="about-card">
+          <div class="about-bio-grid">
+            <div class="about-avatar-container">
+              <img
+                src="images/avatar.png"
+                alt="Chân dung Đinh Bách Hợp"
+                class="about-avatar"
+              />
+            </div>
+            <div class="about-bio-text">
+              <h2>Tiểu Sử &amp; Mục Tiêu Nghề Nghiệp</h2>
+              <p>
+                Xin chào! Tôi là <strong>Đinh Bách Hợp</strong>, hiện là sinh
+                viên năm cuối chuyên ngành <em>Công nghệ Thông tin</em>. Tôi có
+                sự yêu thích đặc biệt đối với việc thiết kế và lập trình giao diện
+                người dùng (Frontend Development).
+              </p>
+              <p>
+                Mục tiêu trước mắt của tôi là ứng tuyển vào vị trí thực tập sinh
+                hoặc nhân viên Frontend / Web Developer, đem những kiến thức về
+                HTML5, CSS3 hiện đại, tư duy thiết kế Mobile-First và tác phong
+                làm việc kỷ luật đóng góp vào các sản phẩm thực tế của doanh nghiệp.
+              </p>
+
+              <h2>Học Vấn &amp; Quá Trình Rèn Luyện</h2>
+              <p>
+                Trong suốt quá trình học tập, tôi đã hoàn thành toàn diện khóa học
+                phát triển Web nền tảng, nắm vững các nguyên lý cấu trúc W3C,
+                thao tác thuần thục với CSS Box Model, Flexbox, CSS Grid, kỹ thuật
+                Responsive Design và quy trình quản trị mã nguồn chuyên nghiệp với
+                Git/GitHub.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Kỹ năng của tôi (Trình bày dưới dạng danh sách <ul>) -->
+      <section class="about-section">
+        <div class="about-card">
+          <h2>Kỹ Năng Chuyên Môn</h2>
+          <p>
+            Các công nghệ và công cụ tôi sử dụng thường xuyên trong việc xây dựng
+            và phát triển các trang web hoàn chỉnh:
+          </p>
+
+          <ul class="skills-list">
+            <li class="skill-item">
+              <span>HTML5 Ngữ Nghĩa (Semantic Elements)</span>
+              <span class="skill-badge">Thành thạo</span>
+            </li>
+            <li class="skill-item">
+              <span>CSS3 &amp; Responsive Web Design</span>
+              <span class="skill-badge">Thành thạo</span>
+            </li>
+            <li class="skill-item">
+              <span>CSS Grid &amp; Flexbox Layouts</span>
+              <span class="skill-badge">Nâng cao</span>
+            </li>
+            <li class="skill-item">
+              <span>Mobile-First Methodology</span>
+              <span class="skill-badge">Thành thạo</span>
+            </li>
+            <li class="skill-item">
+              <span>Git &amp; GitHub Version Control</span>
+              <span class="skill-badge">Cơ bản</span>
+            </li>
+            <li class="skill-item">
+              <span>CSS Checkbox Hack &amp; Hamburger Menu</span>
+              <span class="skill-badge">Thành thạo</span>
+            </li>
+            <li class="skill-item">
+              <span>JavaScript ES6+ Cơ bản</span>
+              <span class="skill-badge">Đang học</span>
+            </li>
+            <li class="skill-item">
+              <span>Chrome DevTools &amp; Debugging</span>
+              <span class="skill-badge">Thành thạo</span>
+            </li>
+            <li class="skill-item">
+              <span>Tối ưu hóa hình ảnh &amp; Hiệu năng Web</span>
+              <span class="skill-badge">Tốt</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer nhất quán -->
+    <footer class="site-footer">
+      <div class="site-footer-content">
+        <div class="site-footer-brand">
+          Đinh Bách Hợp<span>.Portfolio</span>
+        </div>
+        <div class="site-footer-links">
+          <a href="https://github.com/minesan2297" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://facebook.com/dinhhopdh19" target="_blank" rel="noopener">Facebook</a>
+          <a href="contact.html">Liên Hệ</a>
+        </div>
+        <p class="site-footer-copy">
+          &copy; 2026 Đinh Bách Hợp. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

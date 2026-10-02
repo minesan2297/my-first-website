@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Cá Nhân Hoàn Chỉnh - Responsive</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-container">
+    <header class="header">
+      <h1>PORTFOLIO CỦA TÔI</h1>
+    </header>
+
+    <main class="content-grid">
+      <!-- Áp dụng kỹ thuật Art Direction cho Card 1 -->
+      <div class="card card-1">
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcset="https://picsum.photos/800/600?random=1"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="https://picsum.photos/600/400?random=1"
+          />
+          <img
+            src="https://picsum.photos/400/500?random=1"
+            alt="Dự án 1 tiêu điểm"
+          />
+        </picture>
+        <div class="card-caption">Dự án 1 (Tiêu điểm)</div>
+      </div>
+
+      <div class="card card-2"><span>Dự án 2</span></div>
+      <div class="card card-3"><span>Dự án 3</span></div>
+      <div class="card card-4"><span>Dự án 4</span></div>
+      <div class="card card-5"><span>Dự án 5</span></div>
+      <div class="card card-6"><span>Dự án 6</span></div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; 2026 Bản quyền thuộc về tác giả. Xây dựng bằng CSS Grid &
+        Mobile-First.
+      </p>
+    </footer>
+  </body>
+</html>

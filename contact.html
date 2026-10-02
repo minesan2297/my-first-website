@@ -3,32 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Liên hệ với chúng tôi</title>
+    <title>Liên Hệ - Đinh Bách Hợp | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Liên hệ với chúng tôi</h1>
-      <p>Chúng tôi rất mong nhận được phản hồi từ bạn!</p>
+    <!-- Header nhất quán cho toàn bộ website -->
+    <header class="site-header">
+      <div class="site-header-content">
+        <a href="index.html" class="site-logo">
+          Bách Hợp<span>.dev</span>
+        </a>
 
-      <form action="#" method="post">
-        <div class="form-group">
-          <label for="ho_ten">Họ và tên:</label>
-          <input type="text" id="ho_ten" name="ho_ten" />
+        <!-- Checkbox Hack cho Hamburger Menu trên Mobile -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" />
+        <label for="menu-toggle" class="hamburger-btn" aria-label="Mở menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+
+        <!-- Menu điều hướng chính -->
+        <nav class="site-nav" aria-label="Main Navigation">
+          <ul>
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="about.html">Giới Thiệu</a></li>
+            <li><a href="projects.html">Dự Án</a></li>
+            <li><a href="contact.html" class="active">Liên Hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="portfolio-container">
+      <header class="page-header-section">
+        <h1>Liên Hệ Với Tôi</h1>
+        <p>
+          Tôi luôn cởi mở đón nhận các cơ hội thực tập, việc làm mới hoặc các dự án
+          hợp tác thú vị. Đừng ngần ngại để lại lời nhắn!
+        </p>
+      </header>
+
+      <div class="contact-layout">
+        <!-- Cột thông tin liên hệ & Mạng xã hội -->
+        <aside class="contact-info-card">
+          <h2>Thông Tin Liên Lạc</h2>
+          <p>
+            Bạn có thể gửi tin nhắn qua biểu mẫu bên cạnh hoặc kết nối trực tiếp
+            với tôi qua các phương thức dưới đây:
+          </p>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">📍</div>
+            <div class="contact-method-text">
+              <h4>Địa Điểm</h4>
+              <p>Hà Nội, Việt Nam</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">✉️</div>
+            <div class="contact-method-text">
+              <h4>Email Trực Tiếp</h4>
+              <a href="mailto:hopdh26@gmail.com">hopdh26@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">💼</div>
+            <div class="contact-method-text">
+              <h4>Tình Trạng Công Việc</h4>
+              <p>Sẵn sàng nhận cơ hội thực tập / việc làm</p>
+            </div>
+          </div>
+
+          <h2>Kết Nối Mạng Xã Hội</h2>
+          <div class="social-links">
+            <a href="https://github.com/minesan2297" class="social-link" target="_blank" rel="noopener">
+              <span>🐙</span> GitHub
+            </a>
+            <a href="https://linkedin.com" class="social-link" target="_blank" rel="noopener">
+              <span>💼</span> LinkedIn
+            </a>
+            <a href="https://facebook.com/dinhhopdh19" class="social-link" target="_blank" rel="noopener">
+              <span>🌐</span> Facebook
+            </a>
+          </div>
+        </aside>
+
+        <!-- Form liên hệ hoàn chỉnh -->
+        <section class="contact-form-card">
+          <h2>Gửi Lời Nhắn</h2>
+          <form action="#" method="post" class="contact-form">
+            <div class="form-group">
+              <label for="full_name">Họ và tên của bạn <span class="required-star">*</span></label>
+              <input
+                type="text"
+                id="full_name"
+                name="full_name"
+                class="form-control"
+                placeholder="Ví dụ: Nguyễn Văn A"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Địa chỉ Email <span class="required-star">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="tenban@example.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Chủ đề liên hệ</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                class="form-control"
+                placeholder="Ví dụ: Cơ hội thực tập / Trao đổi dự án"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Nội dung lời nhắn <span class="required-star">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                rows="5"
+                placeholder="Nhập nội dung lời nhắn hoặc yêu cầu của bạn tại đây..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Gửi Lời Nhắn &rarr;
+            </button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer nhất quán -->
+    <footer class="site-footer">
+      <div class="site-footer-content">
+        <div class="site-footer-brand">
+          Đinh Bách Hợp<span>.Portfolio</span>
         </div>
-
-        <div class="form-group">
-          <label for="email">Email của bạn:</label>
-          <input type="email" id="email" name="email_nguoi_dung" />
+        <div class="site-footer-links">
+          <a href="https://github.com/minesan2297" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://facebook.com/dinhhopdh19" target="_blank" rel="noopener">Facebook</a>
+          <a href="contact.html">Liên Hệ</a>
         </div>
-
-        <div class="form-group">
-          <label for="loi_nhan">Lời nhắn:</label>
-          <textarea id="loi_nhan" name="loi_nhan" rows="5"></textarea>
-        </div>
-
-        <button type="submit" class="btn">Gửi lời nhắn</button>
-      </form>
-    </div>
+        <p class="site-footer-copy">
+          &copy; 2026 Đinh Bách Hợp. All rights reserved.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
