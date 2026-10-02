@@ -1,0 +1,334 @@
+/* --- 1. Reset Box-Sizing & Nền trang --- */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f0f2f5; /* Màu nền nhẹ làm nổi bật thẻ sản phẩm */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* --- 2. Định dạng Thẻ sản phẩm (.product-card) --- */
+.product-card {
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 50px auto; /* Tự động căn giữa trang */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thử thách: Đổ bóng nhẹ */
+  border-radius: 8px;
+}
+
+/* --- 3. Định dạng các phần tử con bên trong --- */
+.product-card img {
+  width: 100%; /* Chiếm toàn bộ bề rộng vùng nội dung */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product-card h3 {
+  font-size: 1.25rem;
+  color: #1a202c;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.product-card .price {
+  color: #e53e3e; /* Màu đỏ nổi bật cho giá */
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Chuyển đổi thẻ inline <a> thành block để chiếm toàn bộ chiều rộng */
+.product-card .btn {
+  display: block;
+  background-color: #3182ce;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 0;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Hiệu ứng rê chuột cho nút bấm */
+.product-card .btn:hover {
+  background-color: #2b6cb0;
+}
+/* --- Reset Box-Sizing & Căn giữa màn hình --- */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  place-items: center; /* Căn giữa nút bấm chính giữa viewport */
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+/* --- Định dạng trạng thái tĩnh của nút (.btn) --- */
+.btn {
+  display: inline-block; /* Nhận padding, margin nhưng không ngắt dòng toàn bộ chiều rộng */
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 15px 30px;
+  text-decoration: none; /* Khử gạch chân mặc định của thẻ <a> */
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+
+  /* Thiết lập chuyển động mượt mà cho màu nền và hiệu ứng nhấc nút (transform) */
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* --- Trạng thái tương tác khi rê chuột (:hover) --- */
+.btn:hover {
+  background-color: #2980b9; /* Đổi sang tông xanh dương đậm */
+  transform: translateY(
+    -3px
+  ); /* Thử thách cộng thêm: Nhích nhẹ nút lên trên 3px */
+}
+/* --- Reset Box-Sizing & Thiết lập body cơ bản --- */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* --- Định dạng Bảng cơ bản --- */
+table {
+  width: 80%; /* Chiếm 80% bề rộng trang */
+  margin: 40px auto; /* Tự động căn giữa */
+  border-collapse: collapse; /* Gộp các đường viền đôi lại thành đường đơn */
+}
+
+/* Định dạng các ô tiêu đề và ô dữ liệu */
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Làm nổi bật hàng Tiêu đề */
+thead th {
+  background-color: #007bff; /* Màu xanh dương */
+  color: white;
+}
+
+/* --- Tạo hiệu ứng "Ngựa vằn" (Zebra Striping) cho các hàng chẵn --- */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Màu xám rất nhạt xen kẽ */
+}
+
+/* --- Thử thách thêm: Hiệu ứng hover khi rê chuột vào hàng --- */
+tbody tr:hover {
+  background-color: #e2e2e2; /* Tô màu xám đậm hơn một chút để nổi bật */
+}
+/* --- Reset Box-Sizing & Cuộn trang mượt mà --- */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* Tạo hiệu ứng cuộn trang lướt êm khi nhấp liên kết neo */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* --- Định dạng nút Cuộn lên đầu trang (.back-to-top-btn) --- */
+.back-to-top-btn {
+  position: fixed; /* Ghim nút vào một vị trí cố định trên màn hình (viewport) */
+  bottom: 30px; /* Cách cạnh dưới màn hình 30px */
+  right: 30px; /* Cách cạnh phải màn hình 30px */
+  z-index: 100; /* Luôn hiển thị nổi trên các nội dung khác */
+
+  /* Các thuộc tính trang trí */
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 50%; /* Bo tròn thành hình tròn */
+
+  /* Căn giữa icon mũi tên */
+  display: grid;
+  place-items: center;
+
+  transition: background-color 0.3s;
+}
+
+/* Đổi màu khi di chuột qua */
+.back-to-top-btn:hover {
+  background-color: #0056b3;
+}
+/* --- Reset Box-Sizing & Thiết lập cơ bản --- */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+}
+
+/* --- 1. Định dạng Menu chính (.main-nav) --- */
+.main-nav {
+  background-color: #2c3e50; /* Màu nền thanh điều hướng */
+}
+
+.main-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sắp xếp các mục menu cấp 1 nằm ngang */
+.main-nav > ul > li {
+  display: inline-block;
+}
+
+/* Định dạng thẻ liên kết <a> của menu cấp 1 */
+.main-nav > ul > li > a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-weight: 500;
+}
+
+.main-nav > ul > li > a:hover {
+  background-color: #34495e;
+}
+
+/* --- 2. Logic Khối tham chiếu & Ẩn/Hiện Menu con --- */
+
+/* Thiết lập khối tham chiếu tọa độ cho menu con */
+.main-nav li.has-dropdown {
+  position: relative;
+}
+
+/* Định vị menu con (.dropdown) */
+.main-nav .dropdown {
+  display: none; /* Mặc định ẩn hoàn toàn khi tải trang */
+  position: absolute; /* Nhấc khỏi luồng thông thường để định vị */
+  top: 100%; /* Xuất hiện ngay mép dưới của mục cha */
+  left: 0;
+  background-color: #34495e; /* Nền menu con */
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10; /* Thử thách: Luôn nổi trên các nội dung bên dưới */
+}
+
+/* Kích hoạt hiển thị khi rê chuột qua mục cha */
+.main-nav li.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* --- 3. Định dạng các mục bên trong Menu con --- */
+.main-nav .dropdown li {
+  display: block; /* Xếp các mục con theo chiều dọc */
+}
+
+.main-nav .dropdown li a {
+  display: block; /* Vùng nhấp bao trọn toàn bộ bề ngang hàng */
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 12px 18px;
+  font-size: 14px;
+}
+
+.main-nav .dropdown li a:hover {
+  background-color: #1abc9c; /* Màu nhấn khi hover vào từng mục con */
+  color: #ffffff;
+}
+/* --- Reset lề và kích thước cơ bản --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* --- Khung chứa Container căn giữa hoàn hảo --- */
+.container {
+  min-height: 100vh; /* Chiếm tối thiểu 100% chiều cao màn hình */
+  display: flex; /* Dòng 1: Kích hoạt mô hình Flexbox */
+  justify-content: center; /* Dòng 2: Căn giữa theo trục chính (trục ngang) */
+  align-items: center; /* Dòng 3: Căn giữa theo trục phụ (trục dọc) */
+  background-color: #f0f2f5; /* Màu nền xám nhạt */
+}
+
+/* --- Thẻ thông báo (.center-card) --- */
+.center-card {
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.center-card h3 {
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.center-card p {
+  color: #666666;
+}

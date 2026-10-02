@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Công thức làm Bánh Mì Sốt Vang</title>
+  </head>
+  <body>
+    <!-- Đóng gói toàn bộ công thức trong thẻ article -->
+    <article>
+      <!-- Header của bài viết công thức -->
+      <header>
+        <h1>Công Thức Làm Bánh Mì Sốt Vang</h1>
+        <p>
+          Món ăn thơm ngậy, đậm đà chuẩn vị truyền thống cho bữa sáng ấm cúng
+          gia đình.
+        </p>
+        <img
+          src="images/avatar.jpg"
+          alt="Đĩa bánh mì sốt vang nóng hổi kèm rau mùi"
+          width="400"
+        />
+      </header>
+
+      <!-- Section 1: Danh sách nguyên liệu dạng bảng -->
+      <section>
+        <h2>Nguyên liệu chuẩn bị</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tên nguyên liệu</th>
+              <th>Số lượng</th>
+              <th>Đơn vị</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Thịt bắp bò</td>
+              <td>500</td>
+              <td>gam</td>
+            </tr>
+            <tr>
+              <td>Rượu vang đỏ</td>
+              <td>100</td>
+              <td>ml</td>
+            </tr>
+            <tr>
+              <td>Cà chua</td>
+              <td>3</td>
+              <td>quả</td>
+            </tr>
+            <tr>
+              <td>Khoai tây, cà rốt</td>
+              <td>2</td>
+              <td>củ</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 2: Hướng dẫn các bước nấu (danh sách có thứ tự) -->
+      <section>
+        <h2>Các bước thực hiện</h2>
+        <ol>
+          <li>
+            Sơ chế thịt bò, ướp cùng tỏi băm, gia vị và rượu vang đỏ trong 30
+            phút.
+          </li>
+          <li>
+            Xào săn thịt bò, thêm sốt cà chua và ninh nhỏ lửa cho đến khi thịt
+            mềm.
+          </li>
+          <li>
+            Cho khoai tây, cà rốt vào hầm thêm 15 phút đến khi nước sốt sệt lại.
+          </li>
+          <li>
+            Múc ra bát, rắc thêm tiêu, rau mùi và thưởng thức nóng cùng bánh mì
+            giòn.
+          </li>
+        </ol>
+      </section>
+
+      <!-- Footer của công thức -->
+      <footer>
+        <p>
+          <em>Mẹo nhỏ:</em> Nên chọn phần gân hoặc bắp bò nhiều nạc để món sốt
+          vang có độ giòn dẻo tự nhiên nhất.
+        </p>
+      </footer>
+    </article>
+
+    <hr />
+
+    <!-- Phân vùng phản hồi người dùng (bên ngoài article) -->
+    <section>
+      <h2>Để lại phản hồi của bạn</h2>
+      <form action="#" method="post">
+        <!-- Tên người gửi -->
+        <div>
+          <label for="user_name">Họ và tên:</label><br />
+          <input type="text" id="user_name" name="user_name" />
+        </div>
+        <br />
+
+        <!-- Đánh giá số sao (Radio Button Group) -->
+        <div>
+          <label>Đánh giá món ăn:</label><br />
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1">1 sao</label>
+
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2">2 sao</label>
+
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3">3 sao</label>
+
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4">4 sao</label>
+
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label for="star5">5 sao</label>
+        </div>
+        <br />
+
+        <!-- Bình luận -->
+        <div>
+          <label for="user_comment">Bình luận:</label><br />
+          <textarea id="user_comment" name="user_comment" rows="4"></textarea>
+        </div>
+        <br />
+
+        <!-- Nút submit -->
+        <div>
+          <button type="submit">Gửi phản hồi</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
